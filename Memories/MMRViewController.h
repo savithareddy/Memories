@@ -2,12 +2,14 @@
 //  MMRViewController.h
 //  Memories
 //
-//  Created by Savitha Reddy on 7/2/14.
+//  Created by Savitha Reddy on 7/3/14.
 //  Copyright (c) 2014 Savitha. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MMRViewController : UIViewController
+@interface MMRViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property (strong, nonatomic) UIPageViewController *pageController;
 
 @end

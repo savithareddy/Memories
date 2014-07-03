@@ -19,8 +19,9 @@
 		9192FA761963BFBA00A01232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9192FA5E1963BFBA00A01232 /* UIKit.framework */; };
 		9192FA7E1963BFBA00A01232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9192FA7C1963BFBA00A01232 /* InfoPlist.strings */; };
 		9192FA801963BFBA00A01232 /* MemoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA7F1963BFBA00A01232 /* MemoriesTests.m */; };
-		9192FA8B1963BFE300A01232 /* MMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8A1963BFE300A01232 /* MMRViewController.m */; };
+		9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8A1963BFE300A01232 /* MMRChildViewController.m */; };
 		9192FA8E1963C00500A01232 /* MMRCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8D1963C00500A01232 /* MMRCollection.m */; };
+		9192FAD7196510A200A01232 /* MMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAD6196510A200A01232 /* MMRViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +51,12 @@
 		9192FA7B1963BFBA00A01232 /* MemoriesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MemoriesTests-Info.plist"; sourceTree = "<group>"; };
 		9192FA7D1963BFBA00A01232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9192FA7F1963BFBA00A01232 /* MemoriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoriesTests.m; sourceTree = "<group>"; };
-		9192FA891963BFE300A01232 /* MMRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewController.h; sourceTree = "<group>"; };
-		9192FA8A1963BFE300A01232 /* MMRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewController.m; sourceTree = "<group>"; };
+		9192FA891963BFE300A01232 /* MMRChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRChildViewController.h; sourceTree = "<group>"; };
+		9192FA8A1963BFE300A01232 /* MMRChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRChildViewController.m; sourceTree = "<group>"; };
 		9192FA8C1963C00500A01232 /* MMRCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCollection.h; sourceTree = "<group>"; };
 		9192FA8D1963C00500A01232 /* MMRCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCollection.m; sourceTree = "<group>"; };
+		9192FAD5196510A200A01232 /* MMRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewController.h; sourceTree = "<group>"; };
+		9192FAD6196510A200A01232 /* MMRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +86,12 @@
 		9192FA4E1963BFBA00A01232 = {
 			isa = PBXGroup;
 			children = (
+				9192FAD5196510A200A01232 /* MMRViewController.h */,
+				9192FAD6196510A200A01232 /* MMRViewController.m */,
 				9192FA8C1963C00500A01232 /* MMRCollection.h */,
 				9192FA8D1963C00500A01232 /* MMRCollection.m */,
-				9192FA891963BFE300A01232 /* MMRViewController.h */,
-				9192FA8A1963BFE300A01232 /* MMRViewController.m */,
+				9192FA891963BFE300A01232 /* MMRChildViewController.h */,
+				9192FA8A1963BFE300A01232 /* MMRChildViewController.m */,
 				9192FA601963BFBA00A01232 /* Memories */,
 				9192FA791963BFBA00A01232 /* MemoriesTests */,
 				9192FA591963BFBA00A01232 /* Frameworks */,
@@ -252,8 +257,9 @@
 			files = (
 				9192FA671963BFBA00A01232 /* main.m in Sources */,
 				9192FA6B1963BFBA00A01232 /* MMRAppDelegate.m in Sources */,
+				9192FAD7196510A200A01232 /* MMRViewController.m in Sources */,
 				9192FA8E1963C00500A01232 /* MMRCollection.m in Sources */,
-				9192FA8B1963BFE300A01232 /* MMRViewController.m in Sources */,
+				9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +456,7 @@
 				9192FA851963BFBA00A01232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9192FA861963BFBA00A01232 /* Build configuration list for PBXNativeTarget "MemoriesTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +465,7 @@
 				9192FA881963BFBA00A01232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

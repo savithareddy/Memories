@@ -1,24 +1,24 @@
 //
-//  MMRCollection.m
+//  MMRCollectionVC.m
 //  Memories
 //
-//  Created by Savitha Reddy on 7/2/14.
+//  Created by Savitha Reddy on 7/4/14.
 //  Copyright (c) 2014 Savitha. All rights reserved.
 //
 
-#import "MMRCollection.h"
+#import "MMRCollectionVC.h"
 
-@interface MMRCollection ()
+@interface MMRCollectionVC ()
 
 @end
 
-@implementation MMRCollection
+@implementation MMRCollectionVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        self.view.backgroundColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -32,8 +32,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
+   
 }
-
 
 @end

@@ -53,7 +53,8 @@
     
 }
 
-- (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index {
+- (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index
+{
     
     MMRChildViewController *childViewController = [[MMRChildViewController alloc] init];
     childViewController.index = index;

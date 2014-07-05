@@ -9,14 +9,15 @@
 #import "MMRAppDelegate.h"
 #import "MMRChildViewController.h"
 #import "MMRViewController.h"
+#import "MMRViewControllerVC.h"
 
 @implementation MMRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [MMRViewController new];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+//    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

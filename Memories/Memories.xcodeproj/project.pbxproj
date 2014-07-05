@@ -20,8 +20,9 @@
 		9192FA7E1963BFBA00A01232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9192FA7C1963BFBA00A01232 /* InfoPlist.strings */; };
 		9192FA801963BFBA00A01232 /* MemoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA7F1963BFBA00A01232 /* MemoriesTests.m */; };
 		9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8A1963BFE300A01232 /* MMRChildViewController.m */; };
-		9192FA8E1963C00500A01232 /* MMRCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8D1963C00500A01232 /* MMRCollection.m */; };
 		9192FAD7196510A200A01232 /* MMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAD6196510A200A01232 /* MMRViewController.m */; };
+		91C9F9B31967876E00B62C5B /* MMRCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9F9B21967876E00B62C5B /* MMRCollectionVC.m */; };
+		91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +54,12 @@
 		9192FA7F1963BFBA00A01232 /* MemoriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoriesTests.m; sourceTree = "<group>"; };
 		9192FA891963BFE300A01232 /* MMRChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRChildViewController.h; sourceTree = "<group>"; };
 		9192FA8A1963BFE300A01232 /* MMRChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRChildViewController.m; sourceTree = "<group>"; };
-		9192FA8C1963C00500A01232 /* MMRCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCollection.h; sourceTree = "<group>"; };
-		9192FA8D1963C00500A01232 /* MMRCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCollection.m; sourceTree = "<group>"; };
 		9192FAD5196510A200A01232 /* MMRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewController.h; sourceTree = "<group>"; };
 		9192FAD6196510A200A01232 /* MMRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewController.m; sourceTree = "<group>"; };
+		91C9F9B11967876E00B62C5B /* MMRCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCollectionVC.h; sourceTree = "<group>"; };
+		91C9F9B21967876E00B62C5B /* MMRCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCollectionVC.m; sourceTree = "<group>"; };
+		91C9F9B41967898C00B62C5B /* MMRViewControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewControllerVC.h; sourceTree = "<group>"; };
+		91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewControllerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,12 @@
 		9192FA4E1963BFBA00A01232 = {
 			isa = PBXGroup;
 			children = (
+				91C9F9B41967898C00B62C5B /* MMRViewControllerVC.h */,
+				91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */,
+				91C9F9B11967876E00B62C5B /* MMRCollectionVC.h */,
+				91C9F9B21967876E00B62C5B /* MMRCollectionVC.m */,
 				9192FAD5196510A200A01232 /* MMRViewController.h */,
 				9192FAD6196510A200A01232 /* MMRViewController.m */,
-				9192FA8C1963C00500A01232 /* MMRCollection.h */,
-				9192FA8D1963C00500A01232 /* MMRCollection.m */,
 				9192FA891963BFE300A01232 /* MMRChildViewController.h */,
 				9192FA8A1963BFE300A01232 /* MMRChildViewController.m */,
 				9192FA601963BFBA00A01232 /* Memories */,
@@ -256,9 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9192FA671963BFBA00A01232 /* main.m in Sources */,
+				91C9F9B31967876E00B62C5B /* MMRCollectionVC.m in Sources */,
+				91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */,
 				9192FA6B1963BFBA00A01232 /* MMRAppDelegate.m in Sources */,
 				9192FAD7196510A200A01232 /* MMRViewController.m in Sources */,
-				9192FA8E1963C00500A01232 /* MMRCollection.m in Sources */,
 				9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

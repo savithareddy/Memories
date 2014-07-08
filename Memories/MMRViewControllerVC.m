@@ -10,14 +10,17 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #import "MMRViewControllerVC.h"
+#import "MMRCell.h"
 
-@interface MMRViewControllerVC () <UICollectionViewDelegateFlowLayout>
+@interface MMRViewControllerVC () <UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
 @end
 
 @implementation MMRViewControllerVC
 {
     NSArray *photos;
+    NSArray *pictures;
+    
 }
 
 -(id)initWithCollectionViewLayout:(UICollectionViewFlowLayout *)layout
@@ -25,30 +28,35 @@
     self = [super initWithCollectionViewLayout:layout];
     if(self)
     {
-        self.collectionView.backgroundColor = [UIColor blackColor];
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
+        [self.collectionView registerClass:[MMRCell class] forCellWithReuseIdentifier:@"cell"];
         self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
         //        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
-        photos = @[@"hello",@"hello2"];
+        
+        photos = @[@"hello",@"hello2",@"Hello",@"hello",@"hello2",@"Hello",@"hello",@"hello2",@"Hello",@"hello",@"hello2",@"Hello",@"hello"];
+        pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
+        
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
     }
     return self;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(150, 150);
+    return CGSizeMake(120, 120);
 }
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10.0;
+    return 20.0;
 }
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 1.0;
+    return 20.0;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -56,26 +64,44 @@
     return [photos count];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(MMRCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    MMRCell *cell = (MMRCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // loop through cell.subviews and removeFromSuperview
+    
+    [cell.layer setCornerRadius:60.0];
+//    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photos[indexPath.row]]]]];
+    
+//    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:pictures[indexPath.row]]];
 
-    [cell.layer setCornerRadius:75.0];
+//    cellPerson.imageview.frame = CGRectMake(0, 0, 100, 100);
+//    cellPerson.imageview.clipsToBounds = YES;
+    
+//    imageview.layer.cornerRadius = 50;
+//    [cell.contentView addSubview:imageview];
+
 //    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, cell.frame.size.width - 20, 30)];
-    float x = cell.frame.size.width;
-    float y = cell.frame.size.height;
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(x/2.0, y/2.0, x, y)];
-    title.backgroundColor = [UIColor yellowColor];
-    title.textColor = [UIColor blueColor];
+//    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 120, 20)];
+//    float x = cell.frame.size.width;
+//    float y = cell.frame.size.height;
+//    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(x/2.0, y/2.0, x, y)];
+//    title.textAlignment= NSTextAlignmentCenter;
+//    title.backgroundColor = [UIColor yellowColor];
+//    title.textColor = [UIColor blueColor];
     
-    title.text = photos[indexPath.row];
+    cell.namePicture.text = photos[indexPath.row];
+    cell.imagePicture.image =[UIImage imageNamed:pictures[indexPath.row]];
+     cell.imagePicture.center = CGPointMake(cell.frame.size.width/2, (cell.frame.size.height-20)/2);
     
-    
-    [cell.contentView addSubview:title];
-    cell .backgroundColor = [UIColor whiteColor];
+//    [cell.contentView addSubview:title];
+//    cell .backgroundColor = [UIColor orangeColor];
    
     return cell;
 }
+
+//layoutAttributesForElementsInRect:
+//layoutAttributesForItemAtIndexPath:
 
 - (void)viewDidLoad
 {

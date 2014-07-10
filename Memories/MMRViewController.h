@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 
+//- (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index;
+
 @end

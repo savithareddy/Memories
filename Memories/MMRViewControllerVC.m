@@ -11,6 +11,8 @@
 
 #import "MMRViewControllerVC.h"
 #import "MMRCell.h"
+#import "MMRChildViewController.h"
+#import "MMRViewController.h"
 
 @interface MMRViewControllerVC () <UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
@@ -20,7 +22,8 @@
 {
     NSArray *photos;
     NSArray *pictures;
-    
+    MMRChildViewController *pageVC;
+    MMRViewController *viewVC;
 }
 
 -(id)initWithCollectionViewLayout:(UICollectionViewFlowLayout *)layout
@@ -103,6 +106,22 @@
 //layoutAttributesForElementsInRect:
 //layoutAttributesForItemAtIndexPath:
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NSLog(@"go to page number %d",(int)pageVC.pageData);
+//    for (NSArray *picture in pictures) {
+    
+        NSInteger pictureTag = indexPath.row;
+        NSLog(@" index of theis Picture is %d",(int)pictureTag);
+//    }
+    viewVC = [[MMRViewController alloc] init];
+    [self.view addSubview:viewVC.view];
+//    self.navigationController.viewControllers = @[viewVC];
+//    [self.navigationController presentViewController:pageVC animated:YES completion:^{
+//     
+//    }];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

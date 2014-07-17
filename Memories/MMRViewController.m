@@ -8,12 +8,17 @@
 
 #import "MMRViewController.h"
 #import "MMRChildViewController.h"
+#import "MMRViewControllerVC.h"
 
 @interface MMRViewController ()
 
 @end
 
 @implementation MMRViewController
+{
+    MMRViewControllerVC *viewVC;
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,40 +29,41 @@
     return self;
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    
-    NSUInteger index = [(MMRChildViewController *)viewController index];
-    
-    if (index == 0) {
-        return nil;
-    }
-    
-    index--;
-    
-    return [self viewControllerAtIndex:index];
-    
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    
-    NSUInteger index = [(MMRChildViewController *)viewController index];
-    
-    
-    index++;
-    
-    if (index == 13) {
-        return nil;
-    }
-    
-    return [self viewControllerAtIndex:index];
-    
-}
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+//    
+//    NSUInteger index = [(MMRChildViewController *)viewController index];
+//    
+//    if (index == 0) {
+//        return nil;
+//    }
+//    
+//    index--;
+//    
+//    return [self viewControllerAtIndex:index];
+//    
+//}
+//
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+//    
+//    NSUInteger index = [(MMRChildViewController *)viewController index];
+//    
+//    
+//    index++;
+//    
+//    if (index == 13) {
+//        return nil;
+//    }
+//    
+//    return [self viewControllerAtIndex:index];
+//    
+//}
 
 - (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     
     MMRChildViewController *childViewController = [[MMRChildViewController alloc] init];
-    childViewController.index = index;
+    NSLog(@" The page index is %d",(int)viewVC.pageIndex);
+    childViewController.index = viewVC.pageIndex;
     
     return childViewController;
     
@@ -81,7 +87,9 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
-    MMRChildViewController *initialViewController = [self viewControllerAtIndex:0];
+//    MMRChildViewController *initialViewController = [self viewControllerAtIndex:0];
+    
+    MMRChildViewController *initialViewController = [self viewControllerAtIndex:viewVC.pageIndex];
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     

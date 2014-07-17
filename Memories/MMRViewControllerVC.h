@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MMRViewControllerVCDelegate <NSObject>
+
+-(void) passIndexValue: (MMRViewControllerVC *) collection ;
+
+@end
+
 @interface MMRViewControllerVC : UICollectionViewController
+
+@property (nonatomic) NSInteger pageIndex;
 
 @end

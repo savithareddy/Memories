@@ -16,6 +16,8 @@
 
 @interface MMRViewControllerVC () <UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
+@property (nonatomic) UIPageControl *pageControl;
+
 @end
 
 @implementation MMRViewControllerVC
@@ -24,6 +26,7 @@
     NSArray *pictures;
     MMRChildViewController *pageVC;
     MMRViewController *viewVC;
+    
 }
 
 -(id)initWithCollectionViewLayout:(UICollectionViewFlowLayout *)layout
@@ -112,16 +115,25 @@
     NSLog(@"go to page number %d",(int)pageVC.pageData);
 //    for (NSArray *picture in pictures) {
     
-        NSInteger pictureTag = indexPath.row;
-        NSLog(@" index of theis Picture is %d",(int)pictureTag);
+    
+        NSLog(@" index of theis Picture is %d",(int)self.pageIndex);
 //    }
     viewVC = [[MMRViewController alloc] init];
     [self.view addSubview:viewVC.view];
+     self.pageIndex = indexPath.row;
+//    self.pageControl.currentPage = indexPath.row;
 //    self.navigationController.viewControllers = @[viewVC];
 //    [self.navigationController presentViewController:pageVC animated:YES completion:^{
 //     
 //    }];
 }
+
+//- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout cellCenteredAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    self.pageControl.currentPage = indexPath.row;
+//   
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

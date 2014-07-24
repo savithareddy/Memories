@@ -10,7 +10,7 @@
 
 @protocol MMRViewControllerVCDelegate <NSObject>
 
--(void) passIndexValue: (MMRViewControllerVC *) collection ;
+//-(void) passIndexValue: (MMRViewControllerVC *) collection ;
 
 @end
 

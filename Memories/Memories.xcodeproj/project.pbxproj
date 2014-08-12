@@ -38,6 +38,7 @@
 		91A315E1196AE6C00087376B /* Unknown-3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91A315E0196AE6C00087376B /* Unknown-3.jpeg */; };
 		91A315E5196B037B0087376B /* MMRCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A315E4196B037B0087376B /* MMRCell.m */; };
 		91A315E8196B164C0087376B /* MMRDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A315E7196B164C0087376B /* MMRDecoration.m */; };
+		91B6D2C81999C9C200921C7A /* STASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B6D2C71999C9C200921C7A /* STASingleton.m */; };
 		91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */; };
 		91C9F9B81967B46F00B62C5B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91C9F9B71967B46F00B62C5B /* background.jpg */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,8 @@
 		91A315E4196B037B0087376B /* MMRCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCell.m; sourceTree = "<group>"; };
 		91A315E6196B164C0087376B /* MMRDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRDecoration.h; sourceTree = "<group>"; };
 		91A315E7196B164C0087376B /* MMRDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRDecoration.m; sourceTree = "<group>"; };
+		91B6D2C61999C9B800921C7A /* STASingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STASingleton.h; sourceTree = "<group>"; };
+		91B6D2C71999C9C200921C7A /* STASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STASingleton.m; sourceTree = "<group>"; };
 		91C9F9B41967898C00B62C5B /* MMRViewControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewControllerVC.h; sourceTree = "<group>"; };
 		91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewControllerVC.m; sourceTree = "<group>"; };
 		91C9F9B71967B46F00B62C5B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		9192FA4E1963BFBA00A01232 = {
 			isa = PBXGroup;
 			children = (
+				91B6D2C61999C9B800921C7A /* STASingleton.h */,
+				91B6D2C71999C9C200921C7A /* STASingleton.m */,
 				91A315E6196B164C0087376B /* MMRDecoration.h */,
 				91A315E7196B164C0087376B /* MMRDecoration.m */,
 				91A315E3196B037B0087376B /* MMRCell.h */,
@@ -341,6 +346,7 @@
 				91A315E8196B164C0087376B /* MMRDecoration.m in Sources */,
 				91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */,
 				9192FA6B1963BFBA00A01232 /* MMRAppDelegate.m in Sources */,
+				91B6D2C81999C9C200921C7A /* STASingleton.m in Sources */,
 				9192FAD7196510A200A01232 /* MMRViewController.m in Sources */,
 				91A315E5196B037B0087376B /* MMRCell.m in Sources */,
 				9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */,

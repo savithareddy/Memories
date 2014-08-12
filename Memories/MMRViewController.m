@@ -29,40 +29,40 @@
     return self;
 }
 
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-//    
-//    NSUInteger index = [(MMRChildViewController *)viewController index];
-//    
-//    if (index == 0) {
-//        return nil;
-//    }
-//    
-//    index--;
-//    
-//    return [self viewControllerAtIndex:index];
-//    
-//}
-//
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-//    
-//    NSUInteger index = [(MMRChildViewController *)viewController index];
-//    
-//    
-//    index++;
-//    
-//    if (index == 13) {
-//        return nil;
-//    }
-//    
-//    return [self viewControllerAtIndex:index];
-//    
-//}
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    
+    NSUInteger index = [(MMRChildViewController *)viewController index];
+    
+    if (index == 0) {
+        return nil;
+    }
+    
+    index--;
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    
+    NSUInteger index = [(MMRChildViewController *)viewController index];
+    
+    
+    index++;
+    
+    if (index == 13) {
+        return nil;
+    }
+    
+    return [self viewControllerAtIndex:index];
+    
+}
 
 - (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     
     MMRChildViewController *childViewController = [[MMRChildViewController alloc] init];
-    NSLog(@" The page index is %d",(int)viewVC.pageIndex);
+    NSLog(@" The page index in PageViewController is %d",(int)viewVC.pageIndex);
     childViewController.index = viewVC.pageIndex;
     
     return childViewController;

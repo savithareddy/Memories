@@ -8,7 +8,7 @@
 
 #import "MMRChildViewController.h"
 #import "MMRViewControllerVC.h"
-
+#import "STASingleton.h"
 
 @interface MMRChildViewController ()
 
@@ -19,6 +19,7 @@
     NSArray *pageColor;
     UIBarButtonItem *back;
     MMRViewControllerVC *collectionVC;
+    NSArray *pictures;
 }
 
     
@@ -28,7 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 //        self.view.backgroundColor = [UIColor blackColor];
-        self.view.frame = CGRectMake(0, 0, 320, 512);
+//        self.view.frame = CGRectMake(0, 0, 320, 512);
         
         self.pageData = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 200, 50)];
         self.pageData.text = @"Screen #n";
@@ -39,18 +40,22 @@
         
         pageColor = @[[UIColor cyanColor],[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor cyanColor],[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor cyanColor],[UIColor redColor],[UIColor greenColor]];
            }
+    
+    pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
+    
     return self;
 }
 
 -(void) goTableScreen //7-2-2014
 {
 //    [self hideKeyboard];
-    NSLog(@" back person  button pressed");
+//    NSLog(@" back person  button pressed");
     //    [self.delegate backToTable];
-    MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
-                                                                                                   
+    [self.view removeFromSuperview];
+//    MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
     
-    [self presentViewController:collectionVC animated:YES completion:nil];
+    
+//    [self presentViewController:collectionVC animated:YES completion:nil];
    
 //    self.navigationController.navigationBarHidden = YES;
 //    self.navigationController.viewControllers = @[collectionVC];
@@ -63,9 +68,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
      
-    NSLog(@"index is %d",(int)self.index);
-    self.pageData.text = [NSString stringWithFormat:@"Screen #%d",(int)collectionVC.pageIndex];
-    self.view.backgroundColor = pageColor[self.index];
+//    NSLog(@"index is %d",(int)self.index);
+     NSLog(@" The page index in ChildViewController is %d",(int)[STASingleton mainSingleton].pageIndex);
+    self.pageData.text = [NSString stringWithFormat:@"Screen #%d",(int)[STASingleton mainSingleton].pageIndex];
+//    self.view.backgroundColor = pageColor[[STASingleton mainSingleton].pageIndex];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:pictures[[STASingleton mainSingleton].pageIndex]]];
     
     
 //    back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goTableScreen)]; //7-2-2014

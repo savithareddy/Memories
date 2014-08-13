@@ -42,7 +42,7 @@
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         
-        photos = @[@"Student1",@"Student2",@"Student3",@"Student4",@"Student5",@"Student6",@"Student7",@"Student8",@"Student9",@"Student10",@"Student11",@"Student12",@"Student13"];
+        photos = @[@"Student0",@"Student1",@"Student2",@"Student3",@"Student4",@"Student5",@"Student6",@"Student7",@"Student8",@"Student9",@"Student10",@"Student11",@"Student12"];
         pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
         
         self.collectionView.delegate = self;
@@ -123,11 +123,11 @@
      self.pageIndex = indexPath.row;
     [STASingleton mainSingleton].pageIndex = indexPath.row;
     NSLog(@" index of theis Picture is %d",(int)self.pageIndex);
-//    viewVC = [[MMRViewController alloc] init];
-//    [self.view addSubview:viewVC.view];
+    viewVC = [[MMRViewController alloc] init];
+    [self.view addSubview:viewVC.view];
     
-    pageVC = [[MMRChildViewController alloc] init];
-    [self.view addSubview:pageVC.view];
+//    pageVC = [[MMRChildViewController alloc] init];
+//    [self.view addSubview:pageVC.view];
 
 //    self.pageControl.currentPage = indexPath.row;
 //    self.navigationController.viewControllers = @[viewVC];

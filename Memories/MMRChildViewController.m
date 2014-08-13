@@ -18,7 +18,7 @@
 {
     NSArray *pageColor;
     UIBarButtonItem *back;
-    MMRViewControllerVC *collectionVC;
+//    MMRViewControllerVC *collectionVC;
     NSArray *pictures;
 }
 
@@ -32,7 +32,7 @@
 //        self.view.frame = CGRectMake(0, 0, 320, 512);
         
         self.pageData = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 200, 50)];
-        self.pageData.text = @"Screen #n";
+        self.pageData.text = @"Student #n";
         self.pageData.font = [UIFont systemFontOfSize:30];
         self.pageData.textColor = [UIColor whiteColor];
         [self.view addSubview:self.pageData];
@@ -51,26 +51,26 @@
 //    [self hideKeyboard];
 //    NSLog(@" back person  button pressed");
     //    [self.delegate backToTable];
-    [self.view removeFromSuperview];
-//    MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+//    [self.view removeFromSuperview];
     
+    MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+//    [self.view addSubview:collectionVC.view];
     
-//    [self presentViewController:collectionVC animated:YES completion:nil];
+   [self presentViewController:collectionVC animated:YES completion:nil];
    
 //    self.navigationController.navigationBarHidden = YES;
 //    self.navigationController.viewControllers = @[collectionVC];
     //    [self.navigationController presentViewController:containVC animated:YES completion:^{
     //
-    //    }];
+//       }];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
-     
-//    NSLog(@"index is %d",(int)self.index);
+    NSLog(@"index is %d",(int)self.index);
      NSLog(@" The page index in ChildViewController is %d",(int)[STASingleton mainSingleton].pageIndex);
-    self.pageData.text = [NSString stringWithFormat:@"Screen #%d",(int)[STASingleton mainSingleton].pageIndex];
+    self.pageData.text = [NSString stringWithFormat:@"Student #%d",(int)[STASingleton mainSingleton].pageIndex];
 //    self.view.backgroundColor = pageColor[[STASingleton mainSingleton].pageIndex];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:pictures[[STASingleton mainSingleton].pageIndex]]];
     
@@ -79,7 +79,7 @@
 //    back.tintColor = [UIColor blueColor];
 //    self.navigationItem.leftBarButtonItem = back;
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 50, 40)];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
     [backButton setTitle:@"BACK" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(goTableScreen) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];

@@ -9,6 +9,7 @@
 #import "MMRViewController.h"
 #import "MMRChildViewController.h"
 #import "MMRViewControllerVC.h"
+#import "STASingleton.h"
 
 @interface MMRViewController ()
 
@@ -17,7 +18,7 @@
 @implementation MMRViewController
 {
     MMRViewControllerVC *viewVC;
-    
+    NSUInteger index;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,7 +32,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(MMRChildViewController *)viewController index];
+    index = [(MMRChildViewController *)viewController index];
     
     if (index == 0) {
         return nil;
@@ -45,7 +46,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(MMRChildViewController *)viewController index];
+    index = [(MMRChildViewController *)viewController index];
     
     
     index++;
@@ -62,9 +63,9 @@
 {
     
     MMRChildViewController *childViewController = [[MMRChildViewController alloc] init];
-    NSLog(@" The page index in PageViewController is %d",(int)viewVC.pageIndex);
-    childViewController.index = viewVC.pageIndex;
-    
+//    NSLog(@" The page index in PageViewController is %d",(int)viewVC.pageIndex);
+//    childViewController.index = viewVC.pageIndex;
+     childViewController.index = [STASingleton mainSingleton].pageIndex;
     return childViewController;
     
 }
@@ -87,9 +88,11 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
-//    MMRChildViewController *initialViewController = [self viewControllerAtIndex:0];
+//    MMRChildViewController *initialViewController = [self viewControllerAtIndex:[STASingleton mainSingleton].pageIndex];
     
-    MMRChildViewController *initialViewController = [self viewControllerAtIndex:viewVC.pageIndex];
+    MMRChildViewController *initialViewController = [self viewControllerAtIndex:0];
+    
+//   MMRChildViewController *initialViewController = [self viewControllerAtIndex:viewVC.pageIndex];
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     

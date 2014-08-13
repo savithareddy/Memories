@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMRViewController : UIViewController <UIPageViewControllerDataSource>
+@interface MMRViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 
-//- (MMRChildViewController *)viewControllerAtIndex:(NSUInteger)index;
+
 
 @end

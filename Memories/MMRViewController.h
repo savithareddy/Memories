@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 
+@property (strong, nonatomic) UILabel *pageData;
 
-
+@property (strong, nonatomic) UIImageView *pageImage;
 @end

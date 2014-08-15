@@ -11,7 +11,7 @@
 @interface MMRChildViewController : UIViewController
 
 @property (assign, nonatomic) NSInteger index;
-@property (strong, nonatomic) UILabel *pageData;
+
 
 
 @end

@@ -16,7 +16,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+   MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:collectionVC];
+    self.window.rootViewController = navC;
 //    self.window.backgroundColor = [UIColor whiteColor];
     
     UIPageControl *pageControl = [UIPageControl appearance];

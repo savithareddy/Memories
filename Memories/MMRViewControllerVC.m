@@ -27,6 +27,7 @@
     NSArray *pictures;
     MMRChildViewController *pageVC;
     MMRViewController *viewVC;
+    UIBarButtonItem *back;
     
 }
 
@@ -36,20 +37,55 @@
     if(self)
     {
         self.collectionView.backgroundColor = [UIColor whiteColor];
+     
+//        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+//        header.backgroundColor = [UIColor lightGrayColor];
+//        [self.view addSubview:header];
+//        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
+//        headerLabel.text = @"Class of Q2 2014 - Mobile Engineering";
+//        headerLabel.textColor = [UIColor blueColor];
+//        headerLabel.textAlignment = NSTextAlignmentCenter;
+//        [header addSubview:headerLabel];
+        
+        self.navigationItem.title = @"Class of Q2 2014 - Mobile Engineering";
+        [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
+//       [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
+        
         [self.collectionView registerClass:[MMRCell class] forCellWithReuseIdentifier:@"cell"];
+        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+//        [layout setHeaderReferenceSize:CGSizeMake(320, 50)];
         self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
 //                layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         
-        photos = @[@"Student0",@"Student1",@"Student2",@"Student3",@"Student4",@"Student5",@"Student6",@"Student7",@"Student8",@"Student9",@"Student10",@"Student11",@"Student12"];
-        pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
+        photos = @[@"AH",@"AT",@"AJ",@"AN",@"DW",@"ES",@"HP",@"JM",@"JO",@"JY",@"JF",@"SR",@"TM"];
+//        pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
+        
+        pictures = @[@"Ali",@"Ashby",@"Austen",@"Austin.jpeg",@"Derek",@"ED.jpeg",@"Heidi",@"Jeffery",@"Jisha",@"John",@"Jon",@"Savitha",@"TJ"];
         
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
+        
+//        UIBarButtonItem *backButtonNav = [[UIBarButtonItem alloc] initWithTitle:@"BACK" style:UIBarButtonItemStyleBordered target:self action:@selector(goCollection)];
+//        backButtonNav.tintColor = [UIColor blueColor];
+//        //    self.navigationController.navigationBarHidden = NO;
+//        self.navigationController.navigationItem.leftBarButtonItem = backButtonNav;
+        
+//        back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goCollection)];
+//        back.tintColor = [UIColor blueColor];
+//        
+//        self.navigationItem.leftBarButtonItem = back;
     }
     return self;
 }
+
+-(void)goCollection
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -124,16 +160,17 @@
     [STASingleton mainSingleton].pageIndex = indexPath.row;
     NSLog(@" index of theis Picture is %d",(int)self.pageIndex);
     viewVC = [[MMRViewController alloc] init];
-    [self.view addSubview:viewVC.view];
+//    [self.view addSubview:viewVC.view];
     
 //    pageVC = [[MMRChildViewController alloc] init];
 //    [self.view addSubview:pageVC.view];
 
 //    self.pageControl.currentPage = indexPath.row;
 //    self.navigationController.viewControllers = @[viewVC];
-//    [self.navigationController presentViewController:pageVC animated:YES completion:^{
+//    [self.navigationController presentViewController:viewVC animated:YES completion:^{
 //
 //    }];
+    [self.navigationController pushViewController:viewVC animated:YES];
 }
 
 //- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout cellCenteredAtIndexPath:(NSIndexPath *)indexPath
@@ -146,7 +183,21 @@
 {
     [super viewDidLoad];
     
+
+    
 }
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    self.navigationController.navigationBarHidden = YES;
+//}
+
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//     }
+//-(BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 - (void)didReceiveMemoryWarning
 {

@@ -19,8 +19,10 @@
 {
     MMRViewControllerVC *viewVC;
 
-    NSArray *pageColor;
-    NSArray *pictures;
+//    NSArray *pageColor;
+//    NSArray *pictures;
+    
+    UIBarButtonItem *back;
 
 }
 
@@ -29,30 +31,39 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor = [UIColor whiteColor];
         
         
-        pageColor = @[[UIColor cyanColor],[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor cyanColor],[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor cyanColor],[UIColor redColor],[UIColor greenColor]];
-    
-    pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
-    
+        back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goCollection)];
+        back.tintColor = [UIColor blueColor];
+        
+        self.navigationItem.leftBarButtonItem = back;
+
+            
 
     }
     return self;
 }
 
+-(void)goCollection
+{
+    
+    //    MMRViewControllerVC *collectionVc =[[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
     NSUInteger index = [(MMRChildViewController *)viewController index];
-     NSLog(@"index before dec is %d",(int)index);
-    self.pageData.text = [NSString stringWithFormat:@"Student #%d",(int)index];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:pictures[index]]];
-    if (index == 0) {
+//     NSLog(@"index before dec is %d",(int)index);
+        if (index == 0) {
         return nil;
     }
     
     index--;
-     NSLog(@"index after dec is  %d",(int)index);
+//     NSLog(@"index after dec is  %d",(int)index);
     return [self viewControllerAtIndex:index];
     
 }
@@ -60,16 +71,15 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
     NSUInteger index = [(MMRChildViewController *)viewController index];
-    NSLog(@"index before inc is %d",(int)index);
-    self.pageData.text = [NSString stringWithFormat:@"Student #%d",(int)index];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:pictures[index]]];
+//    NSLog(@"index before inc is %d",(int)index);
+    
     
     index++;
     
     if (index == 13) {
         return nil;
     }
-     NSLog(@"index after inc is  %d",(int)index);
+//     NSLog(@"index after inc is  %d",(int)index);
     return [self viewControllerAtIndex:index];
     
 }
@@ -98,17 +108,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.pageData = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 200, 50)];
-    self.pageData.text = @"Student #n";
-    self.pageData.font = [UIFont systemFontOfSize:30];
-    self.pageData.textColor = [UIColor whiteColor];
-    [self.view addSubview:self.pageData];
     
-//    self.pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(50, 180, 200, 200)];
-//    self.pageImage.image = [UIImage imageNamed:@"apple-128"];
-//    [self.view addSubview:self.pageImage];
-
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"apple-128"]];
 
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     

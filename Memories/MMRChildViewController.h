@@ -12,6 +12,9 @@
 
 @property (assign, nonatomic) NSInteger index;
 
+@property (strong, nonatomic) UILabel *pageData;
+@property (strong, nonatomic) UILabel *pageAppName;
 
+@property (strong, nonatomic) UIImageView *pageImage;
 
 @end

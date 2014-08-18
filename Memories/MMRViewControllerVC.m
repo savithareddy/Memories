@@ -47,7 +47,9 @@
 //        headerLabel.textAlignment = NSTextAlignmentCenter;
 //        [header addSubview:headerLabel];
         
-        self.navigationItem.title = @"Class of Q2 2014 - Mobile Engineering";
+        self.navigationItem.title = @"TIY - Class of Q2 2014 - iOS";
+        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Arial" size:9],
+          NSFontAttributeName, nil]];
         [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
 //       [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
         

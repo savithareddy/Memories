@@ -23,6 +23,7 @@
     NSArray *appName;
     NSArray *appLinks;
     NSArray *appIds;
+    NSArray *contact;
 //    UIBarButtonItem *back;
     UINavigationController *navController;
     UIWebView * webView;
@@ -55,6 +56,16 @@
         self.pageAppName.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:self.pageAppName];
         
+        self.pageContact= [[UILabel alloc] initWithFrame:CGRectMake(0, 430, 320, 50)];
+        //        self.pageData.text = @"Student #n";
+        self.pageContact.font = [UIFont systemFontOfSize:20];
+        self.pageContact.textColor = [UIColor blueColor];
+        self.pageContact.textAlignment = NSTextAlignmentCenter;
+        self.pageContact.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shareButton:)];
+        [self.pageContact addGestureRecognizer:tap];
+        [self.view addSubview:self.pageContact];
+        
         self.pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(60, 180, 200, 200)];
         self.pageImage.image = [UIImage imageNamed:@"apple-128"];
         [self.view addSubview:self.pageImage];
@@ -65,7 +76,7 @@
         names = @[@"Ali Houshmand",@"Ashby Thornwell",@"Austen Johnson",@"Austin Nolan",@"Derek Weber",@"Ed Salter",@"Heidi Proske",@"Jeffery Moulds",@"Jisha Obukwelu",@"John Yam",@"Jon Fox",@"Savitha Reddy",@"TJ Mercer"];
 //        pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
         
-        pictures = @[@"AH",@"AT",@"AJ",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"ED",@"Unknown-7.jpeg",@"JM",@"JO",@"JY",@"JF",@"SR",@"TJM"];
+        pictures = @[@"AH",@"AT",@"AJ",@"Austin.jpeg",@"Derek",@"ED",@"Heidi",@"JM",@"JO",@"JY",@"JF",@"SR",@"TJM"];
         
         appName = @[@"MIO(move in/out)",@"BBQ 4 U",@"Box Tagger",@"Austin Nolan",@"Derek Weber",@"Sanctuary Map",@"Heidi Proske",@"Hit The Books ",@"HoneyDo Now",@"Tweet Alarm",@"Piano Says ",@"Shop.PING",@"Writer Blocks"];
         
@@ -96,6 +107,10 @@
                     @889660366,
                     @891169328,
                     @893807282];
+        
+        contact = @[@"ali.houshmand06@gmail.com",@"ash.thornwell@gmail.com",@"aje221@gmail.com",@"adnolan99@gmail.com",@"derek.weber03@gmail.com",
+                    @"edwardcsalter@gmail.com",@"heidiproske@gmail.com",@"jefferymoulds@gmail.com",@"jisha@obukwelu.com",@"mrjohnyam@gmail.com",
+                    @"foxjon123@gmail.com",@"reddysavi5@gmail.com",@"thomaskmercerjr@gmail.com"];
         
         
         
@@ -137,6 +152,7 @@
 //    self.pageData.text = [NSString stringWithFormat:@"Student #%tu",self.index];
     self.pageData.text = names[self.index];
     self.pageAppName.text = appName[self.index];
+    self.pageContact.text = contact[self.index];
     self.pageImage.image = [UIImage imageNamed:pictures[self.index]];
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoItunes)];
     [self.pageImage addGestureRecognizer:recognizer];
@@ -239,6 +255,31 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+- (void)shareButton:(UIButton *)sender
+{
+    NSString *textToShare = @"Nice Application!";
+//    NSURL *myWebsite = [NSURL URLWithString:@"http://www.codingexplorer.com/"];
+    
+    NSArray *objectsToShare = @[textToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems: objectsToShare    applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[UIActivityTypePostToFacebook,
+                                   UIActivityTypePostToTwitter,
+                                   UIActivityTypeAirDrop,
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo,UIActivityTypeAddToReadingList,UIActivityTypeCopyToPasteboard];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 
 
 

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UILabel *pageData;
 @property (strong, nonatomic) UILabel *pageAppName;
+@property (strong, nonatomic) UILabel *pageContact;
 
 @property (strong, nonatomic) UIImageView *pageImage;
 

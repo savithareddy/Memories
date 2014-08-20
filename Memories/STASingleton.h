@@ -13,6 +13,7 @@
 + (STASingleton *) mainSingleton;
 
 @property (nonatomic) NSInteger pageIndex;
+@property (nonatomic) NSInteger totalPages;
 
 
 @end

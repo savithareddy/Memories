@@ -10,15 +10,22 @@
 #import "MMRChildViewController.h"
 #import "MMRViewController.h"
 #import "MMRViewControllerVC.h"
+#import "MMRFrontVC.h"
+#import "MMRBackVC.h"
 
 @implementation MMRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
-    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:collectionVC];
+//   MMRViewControllerVC *collectionVC = [[MMRViewControllerVC alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+//    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:collectionVC];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:[MMRFrontVC new]];
+//    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:[MMRViewController new]];
+
+//    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:[MMRBackVC  new]];
     self.window.rootViewController = navC;
+    navC.navigationBarHidden = YES;
 //    self.window.backgroundColor = [UIColor whiteColor];
     
     UIPageControl *pageControl = [UIPageControl appearance];
@@ -28,6 +35,35 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

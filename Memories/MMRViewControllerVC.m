@@ -37,34 +37,27 @@
     if(self)
     {
         self.collectionView.backgroundColor = [UIColor whiteColor];
-     
-//        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//        header.backgroundColor = [UIColor lightGrayColor];
-//        [self.view addSubview:header];
-//        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
-//        headerLabel.text = @"Class of Q2 2014 - Mobile Engineering";
-//        headerLabel.textColor = [UIColor blueColor];
-//        headerLabel.textAlignment = NSTextAlignmentCenter;
-//        [header addSubview:headerLabel];
+        self.navigationController.navigationBarHidden = YES;
+//     self.view.frame = CGRectMake(10, 10,SCREEN_WIDTH-10,SCREEN_HEIGHT-10);
         
-        self.navigationItem.title = @"TIY - Class of Q2 2014 - iOS";
-        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Arial" size:9],
-          NSFontAttributeName, nil]];
-        [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
+//        self.navigationItem.title = @"Index";
+//        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Arial" size:9],
+//          NSFontAttributeName, nil]];
+//        [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
 //       [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
         
         [self.collectionView registerClass:[MMRCell class] forCellWithReuseIdentifier:@"cell"];
         [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
 //        [layout setHeaderReferenceSize:CGSizeMake(320, 50)];
-        self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
+        self.collectionView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
 //                layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         
-        photos = @[@"AH",@"AT",@"AJ",@"AN",@"DW",@"ES",@"HP",@"JM",@"JO",@"JY",@"JF",@"SR",@"TM"];
+        photos = @[@"AH",@"AT",@"AJ",@"AN",@"DW",@"ES",@"HP",@"JM",@"JO",@"JY",@"JF",@"SR",@"TM",@""];
 //        pictures = @[@"Unknown-1.jpeg",@"Unknown-2.jpeg",@"Unknown-3.jpeg",@"Unknown-4.jpeg",@"Unknown-5.jpeg",@"Unknown-6.jpeg",@"Unknown-7.jpeg",@"images-1.jpeg",@"images-2.jpeg",@"images-3.jpeg",@"images-4.jpeg",@"images-5.jpeg",@"Unknown.jpeg"];
         
-        pictures = @[@"Ali",@"Ashby",@"Austen",@"Austin.jpeg",@"Derek",@"ED.jpeg",@"Heidi",@"Jeffery",@"Jisha",@"John",@"Jon",@"Savitha",@"TJ"];
+        pictures = @[@"Ali",@"Ashby",@"Austen",@"Austin.jpeg",@"Derek",@"ED.jpeg",@"Heidi",@"Jeffery",@"Jisha",@"John",@"Jon",@"Savitha",@"TJ",@""];
         
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
@@ -106,6 +99,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    [STASingleton mainSingleton].totalPages = [photos count];
     return [photos count];
 }
 
@@ -114,7 +108,7 @@
     MMRCell *cell = (MMRCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     // loop through cell.subviews and removeFromSuperview
-    
+//    cell.frame = CGRectMake(0, 50, 320, SCREEN_HEIGHT);
     [cell.layer setCornerRadius:60.0];
 //    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photos[indexPath.row]]]]];
     
@@ -185,6 +179,17 @@
 {
     [super viewDidLoad];
     
+//    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+self.automaticallyAdjustsScrollViewInsets = NO;
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-80)/2, 10, 80, 40)];
+//    header.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:header];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,80,40)];
+    headerLabel.text = @"My Friends";
+    headerLabel.font = [UIFont fontWithName:@"Arial" size:15];
+    headerLabel.textColor = [UIColor blueColor];
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    [header addSubview:headerLabel];
 
     
 }

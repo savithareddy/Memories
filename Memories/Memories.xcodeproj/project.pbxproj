@@ -45,6 +45,7 @@
 		9192FA801963BFBA00A01232 /* MemoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA7F1963BFBA00A01232 /* MemoriesTests.m */; };
 		9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FA8A1963BFE300A01232 /* MMRChildViewController.m */; };
 		9192FAD7196510A200A01232 /* MMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAD6196510A200A01232 /* MMRViewController.m */; };
+		919FA5D019A5107C008EE67E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 919FA5CF19A5107C008EE67E /* menu.png */; };
 		91A315C5196AE4530087376B /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91A315C4196AE4530087376B /* images.jpeg */; };
 		91A315C7196AE4630087376B /* apple-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A315C6196AE4630087376B /* apple-128.png */; };
 		91A315C9196AE6590087376B /* images-1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91A315C8196AE6590087376B /* images-1.jpeg */; };
@@ -63,6 +64,13 @@
 		91A315E5196B037B0087376B /* MMRCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A315E4196B037B0087376B /* MMRCell.m */; };
 		91A315E8196B164C0087376B /* MMRDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A315E7196B164C0087376B /* MMRDecoration.m */; };
 		91B6D2C81999C9C200921C7A /* STASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B6D2C71999C9C200921C7A /* STASingleton.m */; };
+		91BB986B19A424D00072139E /* MMR.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB986A19A424D00072139E /* MMR.m */; };
+		91BB986E19A440F40072139E /* MMRFrontVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB986D19A440F40072139E /* MMRFrontVC.m */; };
+		91BB987119A441100072139E /* MMRBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB987019A441100072139E /* MMRBackVC.m */; };
+		91BB987319A44C620072139E /* arrowr.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB987219A44C620072139E /* arrowr.png */; };
+		91BB987519A44C670072139E /* arrowl.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB987419A44C670072139E /* arrowl.png */; };
+		91BB987719A457A30072139E /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB987619A457A30072139E /* backArrow.png */; };
+		91BB987919A457C20072139E /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB987819A457C20072139E /* arrow.png */; };
 		91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */; };
 		91C9F9B81967B46F00B62C5B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91C9F9B71967B46F00B62C5B /* background.jpg */; };
 /* End PBXBuildFile section */
@@ -122,6 +130,7 @@
 		9192FA8A1963BFE300A01232 /* MMRChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRChildViewController.m; sourceTree = "<group>"; };
 		9192FAD5196510A200A01232 /* MMRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewController.h; sourceTree = "<group>"; };
 		9192FAD6196510A200A01232 /* MMRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewController.m; sourceTree = "<group>"; };
+		919FA5CF19A5107C008EE67E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		91A315C4196AE4530087376B /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		91A315C6196AE4630087376B /* apple-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-128.png"; sourceTree = "<group>"; };
 		91A315C8196AE6590087376B /* images-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-1.jpeg"; sourceTree = "<group>"; };
@@ -143,6 +152,16 @@
 		91A315E7196B164C0087376B /* MMRDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRDecoration.m; sourceTree = "<group>"; };
 		91B6D2C61999C9B800921C7A /* STASingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STASingleton.h; sourceTree = "<group>"; };
 		91B6D2C71999C9C200921C7A /* STASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STASingleton.m; sourceTree = "<group>"; };
+		91BB986919A424D00072139E /* MMR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMR.h; sourceTree = "<group>"; };
+		91BB986A19A424D00072139E /* MMR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMR.m; sourceTree = "<group>"; };
+		91BB986C19A440F40072139E /* MMRFrontVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRFrontVC.h; sourceTree = "<group>"; };
+		91BB986D19A440F40072139E /* MMRFrontVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRFrontVC.m; sourceTree = "<group>"; };
+		91BB986F19A441100072139E /* MMRBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRBackVC.h; sourceTree = "<group>"; };
+		91BB987019A441100072139E /* MMRBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRBackVC.m; sourceTree = "<group>"; };
+		91BB987219A44C620072139E /* arrowr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowr.png; sourceTree = "<group>"; };
+		91BB987419A44C670072139E /* arrowl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowl.png; sourceTree = "<group>"; };
+		91BB987619A457A30072139E /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		91BB987819A457C20072139E /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		91C9F9B41967898C00B62C5B /* MMRViewControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRViewControllerVC.h; sourceTree = "<group>"; };
 		91C9F9B51967898C00B62C5B /* MMRViewControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRViewControllerVC.m; sourceTree = "<group>"; };
 		91C9F9B71967B46F00B62C5B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -206,6 +225,13 @@
 		9192FA4E1963BFBA00A01232 = {
 			isa = PBXGroup;
 			children = (
+				919FA5CF19A5107C008EE67E /* menu.png */,
+				91BB986F19A441100072139E /* MMRBackVC.h */,
+				91BB987019A441100072139E /* MMRBackVC.m */,
+				91BB986C19A440F40072139E /* MMRFrontVC.h */,
+				91BB986D19A440F40072139E /* MMRFrontVC.m */,
+				91BB986919A424D00072139E /* MMR.h */,
+				91BB986A19A424D00072139E /* MMR.m */,
 				915FE478199E7ADA0061BF75 /* ClassImages  */,
 				91B6D2C61999C9B800921C7A /* STASingleton.h */,
 				91B6D2C71999C9C200921C7A /* STASingleton.m */,
@@ -291,6 +317,10 @@
 		91A315E2196B034F0087376B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				91BB987819A457C20072139E /* arrow.png */,
+				91BB987619A457A30072139E /* backArrow.png */,
+				91BB987419A44C670072139E /* arrowl.png */,
+				91BB987219A44C620072139E /* arrowr.png */,
 				91A315E0196AE6C00087376B /* Unknown-3.jpeg */,
 				91A315DE196AE6B90087376B /* Unknown-5.jpeg */,
 				91A315DC196AE6B20087376B /* Unknown-7.jpeg */,
@@ -387,7 +417,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91BB987719A457A30072139E /* backArrow.png in Resources */,
 				915FE49E199E83420061BF75 /* JO.png in Resources */,
+				919FA5D019A5107C008EE67E /* menu.png in Resources */,
 				915FE48E199E7B2F0061BF75 /* John.png in Resources */,
 				915FE491199E7B2F0061BF75 /* Jeffery.png in Resources */,
 				915FE494199E7E710061BF75 /* AH.png in Resources */,
@@ -399,12 +431,14 @@
 				91A315D9196AE69E0087376B /* images-5.jpeg in Resources */,
 				91C9F9B81967B46F00B62C5B /* background.jpg in Resources */,
 				915FE47A199E7B0A0061BF75 /* ED.jpeg in Resources */,
+				91BB987919A457C20072139E /* arrow.png in Resources */,
 				91A315CF196AE6730087376B /* Unknown-4.jpeg in Resources */,
 				91A315D1196AE67C0087376B /* Unknown-2.jpeg in Resources */,
 				91A315C9196AE6590087376B /* images-1.jpeg in Resources */,
 				915FE488199E7B250061BF75 /* Derek.png in Resources */,
 				915FE492199E7B2F0061BF75 /* Ali.png in Resources */,
 				915FE480199E7B180061BF75 /* Jisha.png in Resources */,
+				91BB987319A44C620072139E /* arrowr.png in Resources */,
 				915FE482199E7B180061BF75 /* Heidi.png in Resources */,
 				91A315DD196AE6B20087376B /* Unknown-7.jpeg in Resources */,
 				91A315DF196AE6B90087376B /* Unknown-5.jpeg in Resources */,
@@ -427,6 +461,7 @@
 				91A315CD196AE6690087376B /* images-3.jpeg in Resources */,
 				91A315DB196AE6AB0087376B /* Unknown-6.jpeg in Resources */,
 				91A315D7196AE6980087376B /* images-4.jpeg in Resources */,
+				91BB987519A44C670072139E /* arrowl.png in Resources */,
 				915FE481199E7B180061BF75 /* Austen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,9 +486,12 @@
 				91C9F9B61967898C00B62C5B /* MMRViewControllerVC.m in Sources */,
 				9192FA6B1963BFBA00A01232 /* MMRAppDelegate.m in Sources */,
 				91B6D2C81999C9C200921C7A /* STASingleton.m in Sources */,
+				91BB987119A441100072139E /* MMRBackVC.m in Sources */,
 				9192FAD7196510A200A01232 /* MMRViewController.m in Sources */,
+				91BB986B19A424D00072139E /* MMR.m in Sources */,
 				91A315E5196B037B0087376B /* MMRCell.m in Sources */,
 				9192FA8B1963BFE300A01232 /* MMRChildViewController.m in Sources */,
+				91BB986E19A440F40072139E /* MMRFrontVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +611,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memories/Memories-Prefix.pch";
 				INFOPLIST_FILE = "Memories/Memories-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -586,7 +626,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memories/Memories-Prefix.pch";
 				INFOPLIST_FILE = "Memories/Memories-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

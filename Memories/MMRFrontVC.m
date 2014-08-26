@@ -42,12 +42,18 @@
         openState3.textColor = [UIColor whiteColor];
         openState3.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:openState3];
+//        
+//        UILabel *openState = [[UILabel alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
+//        [openState setText:@"Open the Book"];
+//        [openState setFont:[UIFont fontWithName:@"Savoye LET" size:25]];
+//        openState.textAlignment = NSTextAlignmentRight;
+//        openState.textColor = [UIColor whiteColor];
+//        [self.view addSubview:openState];
         
-        UILabel *openState = [[UILabel alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
-        [openState setText:@"Open the Book"];
+        UIButton *openState = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
+        [openState setTitle:@"Open the Book" forState:UIControlStateNormal];
         [openState setFont:[UIFont fontWithName:@"Savoye LET" size:25]];
-        openState.textAlignment = NSTextAlignmentRight;
-        openState.textColor = [UIColor whiteColor];
+        [openState addTarget:self action:@selector(openCollectionVC) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:openState];
         
         UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(openCollectionVC)];
